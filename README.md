@@ -42,7 +42,7 @@ I'm constantly exploring better ways to architect apps with clean code, accessib
 
 -
 - Email: [hmnshu2690@gmail.com](mailto:hmnshu2690@gmail.com)
-- LinkedIn: [linkedin.com/in/hmnshushrma](https://linkedin.com/in/hmnshushrma)
+- LinkedIn: [linkedin.com/in/hmnshushrma](https://www.linkedin.com/in/hmnshu-shrma/)
 - Twitter: [@hmnshushrma](https://x.com/Hmnshushrma)
 
 ---
