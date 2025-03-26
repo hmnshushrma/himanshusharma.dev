@@ -7,22 +7,66 @@ import Himanshusharma from "../assets/himanshusharma.png";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<BaseLayout title="home">
-  <section class="resume__section a4-container">
-    <div class="resume__section--top">
-      <div class="resume__section--top--intro">
-        <h1 class="name text-4xl font mb-2">Himanshu Sharma</h1>
-        <h2 class="title">Front-End Developer & JavaScript Enthusiast</h2>
-        <p class="description">
-          I design and build performant, accessible, and user-focused web
-          interfaces using modern JavaScript frameworks like React and Angular.
-          Passionate about UI/UX, design systems, and creating seamless digital
-          experiences.
-        </p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon | Himanshu Sharma</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body
+    class="bg-black text-white flex items-center justify-center h-screen px-4"
+  >
+    <main class="text-center max-w-xl">
+      <h1 class="text-4xl font-bold mb-4">🚧 Under Construction</h1>
+      <p class="text-lg text-gray-400 mb-8">
+        Hey there! I'm currently working on something awesome. This site will be
+        back soon with a fresh look.
+      </p>
+
+      <div
+        class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6"
+      >
+        <a
+          href="https://wa.me/919899344334?text=Hi%20Himanshu!%20I%20visited%20your%20portfolio%20site."
+          target="_blank"
+          class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-lg transition"
+        >
+          WhatsApp Me
+        </a>
+        <a
+          href="mailto:hmnshu2690@gmail.com"
+          class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg transition"
+        >
+          Email Me
+        </a>
       </div>
-      <div class="resume__section--top--image">
-        <img src={Himanshusharma.src} alt="himanshu sharma" />
+
+      <div class="flex justify-center gap-6 text-sm text-gray-400">
+        <a
+          href="https://www.linkedin.com/in/hmnshu-shrma/"
+          target="_blank"
+          class="hover:text-white transition"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://x.com/Hmnshushrma"
+          target="_blank"
+          class="hover:text-white transition"
+        >
+          Twitter
+        </a>
+        <a
+          href="mailto:hmnshu2690@gmail.com"
+          class="hover:text-white transition"
+        >
+          Email
+        </a>
       </div>
-    </div>
-  </section>
-</BaseLayout>
+    </main>
+  </body>
+</html>
