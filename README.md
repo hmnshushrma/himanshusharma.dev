@@ -40,10 +40,10 @@ I'm constantly exploring better ways to architect apps with clean code, accessib
 
 ### 📫 Get in Touch
 
-- Portfolio: [yourportfolio.com](https://yourportfolio.com)
+-
 - Email: [hmnshu2690@gmail.com](mailto:hmnshu2690@gmail.com)
-- LinkedIn: [linkedin.com/in/hmnshushrma](https://linkedin.com/in/yourusername)
-- Twitter: [@hmnshushrma](https://twitter.com/yourhandle)
+- LinkedIn: [linkedin.com/in/hmnshushrma](https://linkedin.com/in/hmnshushrma)
+- Twitter: [@hmnshushrma](https://x.com/Hmnshushrma)
 
 ---
 
