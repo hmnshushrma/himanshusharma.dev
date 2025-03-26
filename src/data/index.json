@@ -1,0 +1,207 @@
+{
+    "name": "Himanshu Sharma",
+    "title": "Web Developer / JavaScript Enthusiast",
+    "contact": {
+        "address": "B-13 Street No.2, Kanti Nagar Extension, Delhi 110051",
+        "phone": "+91-9999344334",
+        "email": "hmnshu2690@gmail.com"
+    },
+    "skills": {
+        "frontend": {
+            "JavaScript & Frameworks": [
+                "JavaScript (ES5/ES6)",
+                "TypeScript",
+                "React.js",
+                "AngularJS",
+                "Angular",
+                "Vue.js",
+                "Redux",
+                "Redux-Saga",
+                "Backbone.js",
+                "GraphQL",
+                "jQuery",
+                "Vanilla JS"
+            ],
+            "HTML/CSS & Styling": [
+                "HTML5",
+                "CSS3",
+                "SASS"
+            ],
+            "Responsive Design & Performance": [
+                "Bootstrap",
+                "Foundation Zurb",
+                "lazy-loading",
+                "code splitting",
+                "deferred scripts"
+            ],
+            "Testing": [
+                "Jest",
+                "Enzyme"
+            ],
+            "Build Tools": [
+                "NPM",
+                "Webpack",
+                "Parcel",
+                "Gulp",
+                "Grunt"
+            ],
+            "CI/CD & DevOps": [
+                "Docker"
+            ]
+        },
+        "backend": {
+            "Languages & Frameworks": [
+                "Node.js (Express.js)",
+                "Go (Golang)",
+                "PHP"
+            ],
+            "Databases": [
+                "MySQL",
+                "PostgreSQL",
+                "MongoDB",
+                "Oracle"
+            ],
+            "API Integrations": [
+                "Google Geolocation",
+                "Facebook",
+                "Twitter OAuth & REST",
+                "Webhose",
+                "Freshdesk",
+                "LinkedIn"
+            ]
+        },
+        "mobile": {
+            "React Native": "Built cross-platform mobile apps including an Indian Rail Status app.",
+            "Current Project": "Developing a mobile app allowing sellers to list products with images and descriptions, share checkout links, and accept UPI-based payments. Backend built with Node.js and PostgreSQL."
+        }
+    },
+    "experience": [
+        {
+            "company": "Give Care Inc.",
+            "role": "Front-End Lead",
+            "duration": "Nov 2024 – Present",
+            "responsibilities": [
+                "Led a team of 3 front-end developers.",
+                "Collaborated with product and design teams to build healthcare-focused applications.",
+                "Designed and developed a custom scheduler/calendar system with appointment slot management, conflict detection, and API integration.",
+                "Contributed to design refinement and iterative improvements based on feedback."
+            ]
+        },
+        {
+            "company": "GfK Mode Pvt Ltd (A NIQ Company)",
+            "role": "Principal Front-End Engineer",
+            "duration": "Apr 2024 – Oct 2024",
+            "responsibilities": [
+                "Led a team of 5 developers using Angular 15, React.js, HTML5, SCSS, Redux Toolkit.",
+                "Built Data-in Admin Dashboard for data standardization and configuration management.",
+                "Migrated dashboard from Angular to React, improving performance."
+            ]
+        },
+        {
+            "company": "Freecharge Payment Technologies",
+            "role": "Technical Lead",
+            "duration": "Jun 2023 – Mar 2024",
+            "responsibilities": [
+                "Managed a team of 8 front-end developers.",
+                "Developed ASL stock platform (search, real-time updates, trading) using React and Parcel."
+            ]
+        },
+        {
+            "company": "Harman Connected Services",
+            "role": "Technical Lead",
+            "duration": "Aug 2021 – Jun 2023",
+            "responsibilities": [
+                "Led projects for Nokia and Honeywell.",
+                "Used React, Angular, GraphQL, and Go for building B2B data marketplace and fire system calculator."
+            ]
+        },
+        {
+            "company": "Publicis Sapient",
+            "role": "Senior Associate (Experience Technology)",
+            "duration": "Dec 2019 – Aug 2021",
+            "responsibilities": [
+                "Built React and Angular apps.",
+                "Developed Verizon checkout modules and internal tools like Women on Wheels."
+            ]
+        },
+        {
+            "company": "HDFC Life",
+            "role": "UI/Front-End Developer",
+            "duration": "Jan 2019 – Dec 2019",
+            "responsibilities": [
+                "Built React-based platforms Life99 and InstaPRL for internal tools and hiring."
+            ]
+        },
+        {
+            "company": "Leadics",
+            "role": "UI/Front-End Developer",
+            "duration": "Jan 2018 – Jan 2019",
+            "responsibilities": [
+                "Built Angular-based automotive tools: WheelMonk, Leap, Autoscope."
+            ]
+        },
+        {
+            "company": "Greyloft Pte Ltd",
+            "role": "Front-End Developer",
+            "duration": "Jan 2017 – Jul 2017",
+            "responsibilities": [
+                "Built real estate and inspection web apps using Angular and Laravel."
+            ]
+        },
+        {
+            "company": "CollegeDunia Web Pvt Ltd",
+            "role": "Front-End Developer",
+            "duration": "Aug 2016 – Jan 2017",
+            "responsibilities": [
+                "Developed frontend for collegedunia.com and zoutons.com."
+            ]
+        },
+        {
+            "company": "MSL Group",
+            "role": "Web Developer",
+            "duration": "Jan 2016 – Jul 2016",
+            "responsibilities": [
+                "Full-stack development using PHP (Laravel, CodeIgniter) for clients like TOI, PNB MetLife, Pfizer."
+            ]
+        },
+        {
+            "company": "LimeTray",
+            "role": "Web Developer",
+            "duration": "Dec 2014 – Nov 2015",
+            "responsibilities": [
+                "Created HTML wireframes, client tools, and custom websites for brands like Subway, Burger King."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "MCA",
+            "institution": "Tecnia Institute of Advanced Studies, GGSIPU",
+            "duration": "Jul 2012 – May 2015",
+            "score": "80% Aggregate"
+        },
+        {
+            "degree": "BBA (CAM)",
+            "institution": "DAV Institute of Management, GGSIPU",
+            "duration": "Aug 2009 – May 2012",
+            "score": "70% Aggregate"
+        }
+    ],
+    "personalTraits": {
+        "hobbies": [
+            "Skipping",
+            "Cricket",
+            "Music"
+        ],
+        "strengths": [
+            "Optimistic",
+            "Responsible",
+            "Punctual",
+            "Trustworthy",
+            "Workaholic"
+        ]
+    },
+    "declaration": "I hereby declare that all the above information is correct to the best of my knowledge.",
+    "location": "New Delhi",
+    "signature": "Himanshu Sharma"
+}

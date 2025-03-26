@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+// You can pass props like title if needed later
+const { title = "Himanshu's Portfolio" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="bg-white">
+    <header class="p-4">
+      <nav class="flex gap-4">
+        <a href="/" class="hover:underline">Home</a>
+        <a href="/about" class="hover:underline">About</a>
+        <a href="/projects" class="hover:underline">Projects</a>
+        <a href="/contact" class="hover:underline">Contact</a>
+      </nav>
+    </header>
+
+    <main class="p-6">
+      <slot />
+    </main>
+
+    <footer class="p-4 text-sm text-center">
+      © {new Date().getFullYear()} Himanshu Sharma
+    </footer>
+  </body>
+</html>

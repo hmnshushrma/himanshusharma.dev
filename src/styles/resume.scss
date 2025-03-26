@@ -1,0 +1,59 @@
+@use "variables" as *;
+@use "mediaquery" as *;
+
+.a4-container {
+  max-width: 794px; // Close to true A4 width
+
+  @include respond-md {
+    max-width: 600px;
+    margin: 40px;
+  }
+
+  @include respond-lg {
+    max-width: 700px;
+    margin: 40px;
+  }
+  margin: 0 auto;
+  padding: 40px;
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-family-base;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  min-height: 1123px; // Optional: A4 height (in px)
+  border-radius: 6px;
+}
+
+.resume__section {
+  @include flex-column;
+  padding: $spacing-lg;
+  margin: 0 auto;
+  &--top {
+    @include flex-row;
+    justify-content: space-between;
+    &--image {
+      display: inline-block;
+
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      flex: 1;
+      max-width: 200px;
+      img {
+        display: block;
+        border-radius: 6px;
+        width: 200px;
+        height: auto;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease, transform 0.3s ease;
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+
+        img {
+          filter: grayscale(0%);
+          transform: scale(1.03);
+        }
+      }
+    }
+  }
+}

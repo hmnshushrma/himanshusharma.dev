@@ -1,0 +1,41 @@
+// ---------------------------------------------
+// 📱 BREAKPOINTS (based on device widths)
+// ---------------------------------------------
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 1024px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 600px;
+$breakpoint-xs: 480px;
+
+// ---------------------------------------------
+// 📦 MEDIA QUERY MIXINS
+// ---------------------------------------------
+@mixin respond-xl {
+  @media (max-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin respond-lg {
+  @media (max-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin respond-md {
+  @media (max-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin respond-sm {
+  @media (max-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin respond-xs {
+  @media (max-width: #{$breakpoint-xs}) {
+    @content;
+  }
+}

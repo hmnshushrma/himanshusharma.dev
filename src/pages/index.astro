@@ -1,11 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/resume.scss";
+import Himanshusharma from "../assets/himanshusharma.png";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="home">
+  <section class="resume__section a4-container">
+    <div class="resume__section--top">
+      <div class="resume__section--top--intro">
+        <h1 class="name text-4xl font mb-2">Himanshu Sharma</h1>
+        <h2 class="title">Front-End Developer & JavaScript Enthusiast</h2>
+        <p class="description">
+          I design and build performant, accessible, and user-focused web
+          interfaces using modern JavaScript frameworks like React and Angular.
+          Passionate about UI/UX, design systems, and creating seamless digital
+          experiences.
+        </p>
+      </div>
+      <div class="resume__section--top--image">
+        <img src={Himanshusharma.src} alt="himanshu sharma" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
