@@ -1,0 +1,41 @@
+/* Light defaults */
+:root {
+  color-scheme: light dark; /* lets browsers style native UI */
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --surface-2: #f2f4f8;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e5e7eb;
+  --accent: #0ea5b7; /* tweak to taste */
+
+  /* toolbar neutrals (no blue) */
+  --tb-start: #1f2937;
+  --tb-end:   #0f172a;
+  --tb-fg:    #ffffff;
+
+  /* optional smooth theme transition on key surfaces */
+  --theme-trans: background-color .22s ease, color .22s ease, border-color .22s ease;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1115;
+  --surface: #141922;
+  --surface-2: #0d1117;
+  --text: #e8e8e8;
+  --muted: #b8c0cc;
+  --border: #2a3140;
+  --accent: #22d3ee;
+
+  --tb-start: #0f172a;
+  --tb-end:   #020617;
+  --tb-fg:    #ffffff;
+}
+
+/* apply pleasant transitions only where it matters */
+html, body, .card, .site-header, .resume__toolbar {
+  transition: var(--theme-trans);
+}
+
+body { background: var(--bg); color: var(--text); }

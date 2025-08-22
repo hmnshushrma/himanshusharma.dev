@@ -1,0 +1,42 @@
+<!-- HS monogram icon (light/dark aware). ViewBox=64 so it looks crisp at 16–256px -->
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HS">
+  <defs>
+    <!-- Accent gradient -->
+    <linearGradient id="g" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5b7"></stop>
+      <stop offset="1" stop-color="#22d3ee"></stop>
+    </linearGradient>
+
+    <!-- Soft drop shadow for the monogram (compositor-friendly in most renderers) -->
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.18"></feDropShadow>
+    </filter>
+
+    <!-- Light/Dark theming inside the SVG -->
+    <style>
+      .bg { fill: #ffffff }
+      .ring { stroke: rgba(0,0,0,.06) }
+      .fg { fill: #0b0f14 }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #0b0f14 }
+        .ring { stroke: rgba(255,255,255,.08) }
+        .fg { fill: #ffffff }
+      }
+    </style>
+  </defs>
+
+  <!-- rounded background with subtle ring + gradient wash -->
+  <rect x="2" y="2" width="60" height="60" rx="14" class="bg"></rect>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="13.5" fill="none" class="ring"></rect>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)" opacity="0.9"></rect>
+
+  <!-- HS monogram built from geometry (no external fonts) -->
+  <g class="fg" filter="url(#s)">
+    <!-- H -->
+    <rect x="12" y="18" width="6" height="28" rx="2"></rect>
+    <rect x="28" y="18" width="6" height="28" rx="2"></rect>
+    <rect x="12" y="30" width="22" height="6" rx="2"></rect>
+    <!-- S (simple curve made from arcs; reads well at 16px) -->
+    <path d="M52 22c0-4.4-4.1-8-9.1-8c-3.6 0-6.8 1.8-8.1 4.4a2 2 0 0 0 3.6 1.7c.9-1.7 3-2.6 4.6-2.6c2.6 0 5 1.5 5 4c0 2.2-1.9 3.2-4.3 4l-3.2 1c-3.2 1-6.4 2.7-6.4 6.6c0 4.4 4.1 8 9.1 8c3.5 0 6.5-1.6 8.0-4.1a2 2 0 0 0-3.4-2.0c-1.1 1.7-2.9 2.1-4.6 2.1c-2.5 0-5-1.5-5-4c0-1.9 1.9-2.8 4.1-3.5l3.2-1c3.8-1.2 6.6-3.0 6.6-6.9Z"></path>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+.resume__section {
+  padding-block: 16px 22px;
+}
+
+.resume__section + .resume__section {
+  border-top: 1px solid var(--border);
+}
+
+.resume__section-title {
+  margin: 0 0 10px;
+  font-size: var(--fs-2);
+  font-weight: 700;
+  letter-spacing: -.2px;
+}

@@ -1,0 +1,79 @@
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* vertical rail */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+}
+
+.timeline__item {
+  position: relative;
+  display: block;
+  padding-left: 32px; /* space for dot + rail */
+  margin: 0 0 18px;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent);
+}
+
+.timeline__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  align-items: baseline;
+}
+
+.timeline__role {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+.timeline__company {
+  color: var(--muted);
+  font-weight: 600;
+}
+.timeline__dates {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.timeline__summary {
+  margin: 6px 0 0;
+}
+
+.timeline__highlights {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  li {
+    line-height: 1.35;
+  }
+}
+
+/* print */
+@media print {
+  .timeline__item {
+    margin-bottom: 10px;
+  }
+  .timeline__highlights {
+    gap: 4px;
+  }
+}
