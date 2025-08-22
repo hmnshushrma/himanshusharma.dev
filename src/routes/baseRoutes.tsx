@@ -4,7 +4,7 @@ import type { RouteObject } from "react-router-dom";
 import { RootLayout } from "../layouts/rootLayout";
 
 const ResumePage = lazy(() => import("../pages/resumePage"));
-const ProjectsPage = lazy(() => import("../pages/projectsPage"));
+// const ProjectsPage = lazy(() => import("../pages/projectsPage"));
 const PrintPage = lazy(() => import("../pages/printPage"));
 const NotFoundPage = lazy(() => import("../pages/notFoundPage"));
 const TimelinePage = lazy(() => import("../pages/timelinePage"));
