@@ -1,0 +1,65 @@
+{
+    "basics": {
+        "name": "Himanshu Sharma",
+        "label": "Principal Front-End Engineer",
+        "email": "himanshu@example.com",
+        "phone": "+91-98765-43210",
+        "url": "https://hmnshu.codes",
+        "location": {
+            "city": "Noida",
+            "countryCode": "IN"
+        },
+        "summary": "Principal FE engineer (10+ yrs) building scalable apps in React/Angular. DX, design systems, and clean architecture focused."
+    },
+    "experience": [
+        {
+            "id": "exp-1",
+            "position": "Principal Front-End Engineer",
+            "company": "GIV Care Inc.",
+            "startDate": "Aug 2023",
+            "endDate": "Present",
+            "summary": "Led Scheduler & Caregiver modules; V3 architecture, feature flags, complex state management.",
+            "highlights": [
+                "Shipped Scheduler V3 (day/week/month) with virtualized grids",
+                "Cut bundle ~28% via code-splitting and analyzer-driven optimizations",
+                "Introduced unit/integration testing & CI gates"
+            ],
+            "stack": [
+                "React",
+                "TypeScript",
+                "Angular",
+                "Vite",
+                "NX",
+                "SCSS"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "RxRecords",
+            "summary": "Clinic management platform (web + mobile). Go + React/Angular."
+        },
+        {
+            "name": "SimpleSouk",
+            "summary": "Lightweight marketplace with UPI payments. Go backend + RN."
+        }
+    ],
+    "skills": [
+        "React",
+        "TypeScript",
+        "Angular",
+        "SCSS",
+        "Node",
+        "Go",
+        "Vite",
+        "NX",
+        "Module Federation"
+    ],
+    "education": [
+        {
+            "studyType": "B.Tech",
+            "area": "CS",
+            "institution": "ABC Institute of Technology"
+        }
+    ]
+}

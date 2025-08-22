@@ -1,0 +1,244 @@
+/* Centered timeline – click-to-modal with 60fps transforms */
+.timeline--center {
+  --card-w: min(640px, 92vw);
+  --radius: 14px;
+
+  /* easing + durations */
+  --ease-in:  cubic-bezier(.4, 0, 1, 1);      /* accelerate */
+  --ease-out: cubic-bezier(0, 0, .2, 1);      /* decelerate */
+  --panel-in-ms: 220ms;
+  --panel-out-ms: 220ms;
+  --overlay-in-ms: 200ms;
+  --overlay-out-ms: 200ms;
+}
+
+.timeline--center .timeline__grid {
+  display: grid;
+  grid-template-columns: 1fr var(--card-w) 1fr;
+  gap: 18px 32px;
+}
+
+/* centered preview cards */
+.timeline--center .timeline__card.center {
+  grid-column: 2;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+  cursor: pointer;
+
+  /* compositor-friendly */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity, box-shadow, border-color;
+  transition: transform 140ms var(--ease-out),
+              box-shadow 140ms linear,
+              border-color 140ms linear,
+              background 140ms linear;
+}
+.timeline--center {
+  --ease-in:  cubic-bezier(.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+}
+
+/* 🔑 keyframes */
+@keyframes tl-card-in {
+  0%   { transform: translateY(2px) scale(.985); opacity: .98; }
+  60%  { transform: translateY(0)    scale(1.012); }
+  100% { transform: translateY(0)    scale(1);     opacity: 1; }
+}
+
+@keyframes tl-outline-pop {
+  0%   { outline-color: rgba(34, 211, 238, 0); outline-offset: 0; }
+  100% { outline-color: var(--accent, #22d3ee); outline-offset: 2px; }
+}
+
+/* base card transitions (GPU/compositor where possible) */
+.timeline--center .timeline__card.center {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity, box-shadow, border-color, outline-color, outline-offset;
+  transition:
+    transform        160ms var(--ease-out),
+    background-color 160ms linear,
+    box-shadow       160ms linear,
+    border-color     160ms linear,
+    outline-color    160ms linear,
+    outline-offset   160ms ease;
+}
+
+/* ✅ hover/focus-visible with keyframes + transitions */
+.timeline--center .timeline__card.center:focus-visible,
+.timeline--center .timeline__card.center:hover {
+  background: var(--surface-hover, #f9fafb);
+  outline: 2px solid var(--accent, #22d3ee);
+  outline-offset: 2px;
+  /* keep motion on compositor */
+  transform: scale(1.01) translateZ(0);
+
+  /* keyframes (ease-in feel) */
+  animation:
+    tl-card-in      220ms var(--ease-in) both,
+    tl-outline-pop  220ms var(--ease-in) both;
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .timeline--center .timeline__card.center { transition: none; }
+  .timeline--center .timeline__card.center:hover,
+  .timeline--center .timeline__card.center:focus-visible { animation: none; }
+}
+
+.timeline__head { display: grid; gap: 6px; }
+.timeline__role { margin: 0; font-weight: 700; font-size: 1.02rem; letter-spacing: -.1px; }
+.timeline__meta { display: flex; gap: 10px; flex-wrap: wrap; opacity: .85; font-size: .92rem; }
+.timeline__company { font-weight: 700; }
+.timeline__summary { margin: 6px 0 2px; }
+
+/* ===== Modal overlay & panel states ===== */
+.timeline-modal {
+  /* defaults (used for OPEN) */
+  --panel-dur: var(--panel-in-ms);
+  --panel-ease: var(--ease-in);
+  --overlay-dur: var(--overlay-in-ms);
+  --overlay-ease: var(--ease-in);
+
+  position: fixed; inset: 0; z-index: 60;
+  display: grid; place-items: center;
+  background: color-mix(in oklab, black 55%, transparent);
+  opacity: 0; pointer-events: none;
+
+  /* only animate opacity (compositor) */
+  transition: opacity var(--overlay-dur) var(--overlay-ease);
+}
+
+.timeline-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* when closing, swap timing to ease-out without layout */
+.timeline-modal.is-closing {
+  --panel-dur: var(--panel-out-ms);
+  --panel-ease: var(--ease-out);
+  --overlay-dur: var(--overlay-out-ms);
+  --overlay-ease: var(--ease-out);
+}
+
+.timeline-modal__panel {
+  width: min(820px, 94vw);
+  max-height: min(86vh, 1000px);
+  overflow: auto;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 18px 80px rgba(0,0,0,.45);
+
+  /* start a tad below & smaller (GPU only) */
+  transform: translateY(8px) scale(.96) translateZ(0);
+  opacity: 0;
+
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+
+  transition:
+    transform var(--panel-dur) var(--panel-ease),
+    opacity  var(--panel-dur) linear;
+}
+
+.timeline-modal.is-open .timeline-modal__panel {
+  transform: translateY(0) scale(1) translateZ(0);
+  opacity: 1;
+}
+
+/* content */
+.modal__head { position: relative; display: grid; gap: 6px; }
+.modal__role { margin: 0; font-weight: 800; font-size: 1.15rem; }
+.modal__meta { display: flex; gap: 12px; flex-wrap: wrap; color: var(--muted, #667085); }
+.modal__company { font-weight: 700; }
+.modal__close {
+  position: absolute; top: -4px; right: 0;
+  border: 0; background: transparent; font-size: 28px; line-height: 1; cursor: pointer; color: inherit;
+}
+.modal__summary { margin: 10px 0 8px; }
+.modal__highlights { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 6px; }
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .timeline--center .timeline__card.center,
+  .timeline-modal,
+  .timeline-modal__panel { transition: none; }
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .timeline--center .timeline__grid { grid-template-columns: 1fr; }
+  .timeline--center .timeline__card.center { grid-column: auto; }
+}
+
+
+/* ===== Smooth 0.5s open/close (60fps: transform/opacity only) ===== */
+.timeline--center {
+  --ease-in:  cubic-bezier(.4, 0, 1, 1);   /* accelerate in */
+  --ease-out: cubic-bezier(0, 0, .2, 1);   /* decelerate out */
+
+  --overlay-in-ms:  500ms;
+  --overlay-out-ms: 500ms;
+  --panel-in-ms:    500ms;
+  --panel-out-ms:   500ms;
+}
+
+/* Keyframes */
+@keyframes tl-overlay-in   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes tl-overlay-out  { from { opacity: 1; } to { opacity: 0; } }
+@keyframes tl-panel-in {
+  0%   { transform: translateY(12px) scale(.96); opacity: 0; }
+  60%  { transform: translateY(0)    scale(1.02); }
+  100% { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+@keyframes tl-panel-out {
+  0%   { transform: translateY(0) scale(1);    opacity: 1; }
+  100% { transform: translateY(8px) scale(.96); opacity: 0; }
+}
+
+/* Base overlay (non-interactive by default) */
+.timeline-modal {
+  position: fixed; inset: 0; z-index: 60;
+  display: grid; place-items: center;
+  background: color-mix(in oklab, black 55%, transparent);
+  opacity: 0; pointer-events: none;
+}
+
+/* OPEN state — animations run on mount */
+.timeline-modal.is-open {
+  pointer-events: auto;
+  animation: tl-overlay-in var(--overlay-in-ms) var(--ease-in) forwards;
+}
+.timeline-modal.is-open .timeline-modal__panel {
+  animation: tl-panel-in   var(--panel-in-ms)   var(--ease-in) forwards;
+}
+
+/* CLOSING state — reverse gracefully */
+.timeline-modal.is-closing {
+  pointer-events: none; /* block clicks while exiting */
+  animation: tl-overlay-out var(--overlay-out-ms) var(--ease-out) forwards;
+}
+.timeline-modal.is-closing .timeline-modal__panel {
+  animation: tl-panel-out   var(--panel-out-ms)   var(--ease-out) forwards;
+}
+
+/* Panel base (static styles only; no transitions needed) */
+.timeline-modal__panel {
+  width: min(820px, 94vw);
+  max-height: min(86vh, 1000px);
+  overflow: auto;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 18px 80px rgba(0,0,0,.45);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
