@@ -7,10 +7,13 @@ import {
 } from "react-router-dom";
 
 import Toolbar from "../components/common/commonToolbar";
+import { useAnalytics } from "../hooks/useAnalytics";
 
 export function RootLayout() {
   const { pathname } = useLocation();
   const hideChrome = pathname === "/print";
+   useAnalytics();
+
 
   return (
     <div className="shell">

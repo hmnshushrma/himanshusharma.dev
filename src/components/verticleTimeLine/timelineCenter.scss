@@ -21,21 +21,23 @@
 /* centered preview cards */
 .timeline--center .timeline__card.center {
   grid-column: 2;
-  background: var(--surface, #fff);
-  border: 1px solid var(--border, #e5e7eb);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 16px;
-  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+  box-shadow: var(--elev-shadow);
   cursor: pointer;
 
-  /* compositor-friendly */
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: transform, opacity, box-shadow, border-color;
-  transition: transform 140ms var(--ease-out),
-              box-shadow 140ms linear,
-              border-color 140ms linear,
-              background 140ms linear;
+  transition: transform 160ms var(--ease-out),
+              background-color 160ms linear,
+              box-shadow 160ms linear,
+              border-color 160ms linear,
+              outline-color 160ms linear,
+              outline-offset 160ms ease;
 }
 .timeline--center {
   --ease-in:  cubic-bezier(.4, 0, 1, 1);
@@ -242,3 +244,5 @@
   will-change: transform, opacity;
   backface-visibility: hidden;
 }
+
+
